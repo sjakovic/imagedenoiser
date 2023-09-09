@@ -55,48 +55,56 @@
                                     <div class="card-body p-5">
                                         <!-- Professional skills list-->
                                         <div class="mb-5">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div
-                                                    class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                                                    <i class="bi bi-image"></i></div>
-                                                <h3 class="fw-bolder mb-0"><span
-                                                        class="text-gradient d-inline">Select image</span></h3>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <input type="file" class="form-control" />
-                                            </div>
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div
-                                                    class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                                                    <i class="bi bi-filter"></i></div>
-                                                <h3 class="fw-bolder mb-0"><span
-                                                        class="text-gradient d-inline">Choose filter</span></h3>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <select name="filter_type" class="form-control">
-                                                    <option>Mean filtering</option>
-                                                    <option>Median filtering</option>
-                                                    <option>Gaussian blur</option>
-                                                    <option>Bilateral filtering</option>
-                                                    <option>Wavelet transformation</option>
-                                                </select>
-                                            </div>
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div
-                                                    class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                                                    <i class="bi bi-dot"></i></div>
-                                                <h3 class="fw-bolder mb-0"><span
-                                                        class="text-gradient d-inline">Set Kernel size</span></h3>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <input type="number" class="form-control" min="3" max="99" value="3">
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <input type="button" class="form-control bg-primary
+                                            <form name="denoise_form"
+                                                  enctype="multipart/form-data"
+                                                  method="POST"
+                                                  action="{{ route('denoise-image') }}">
+                                                @csrf
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div
+                                                        class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                        <i class="bi bi-image"></i></div>
+                                                    <h3 class="fw-bolder mb-0"><span
+                                                            class="text-gradient d-inline">Select image</span></h3>
+                                                </div>
+                                                <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                                    <input type="file" name="image_file" class="form-control"/>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div
+                                                        class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                        <i class="bi bi-filter"></i></div>
+                                                    <h3 class="fw-bolder mb-0"><span
+                                                            class="text-gradient d-inline">Choose filter</span></h3>
+                                                </div>
+                                                <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                                    <select name="filter_type" class="form-control">
+                                                        <option>Mean filtering</option>
+                                                        <option>Median filtering</option>
+                                                        <option>Gaussian blur</option>
+                                                        <option>Bilateral filtering</option>
+                                                        <option>Wavelet transformation</option>
+                                                    </select>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div
+                                                        class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                                        <i class="bi bi-dot"></i></div>
+                                                    <h3 class="fw-bolder mb-0"><span
+                                                            class="text-gradient d-inline">Set Kernel size</span></h3>
+                                                </div>
+                                                <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                                    <input type="number" name="kernel" class="form-control" min="3"
+                                                           max="99"
+                                                           value="3">
+                                                </div>
+                                                <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                                    <input type="submit" class="form-control bg-primary
                                                 bg-gradient-primary-to-secondary text-white rounded-3 pt-3 pb-3
                                                 fs-3"
-                                                       value="CONVERT">
-                                            </div>
+                                                           value="CONVERT">
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
