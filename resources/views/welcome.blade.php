@@ -30,6 +30,34 @@
     <!-- Header-->
     <header class="py-5">
         <div class="container px-5 pb-5">
+            @isset($showPreview)
+                <div class="row gx-5 align-items-center">
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="row">
+                                    <div class="col-md-6 text-center">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                            <div class="text-uppercase">Before</div>
+                                        </div>
+                                        <div>
+                                            <img src="{{ $originalImage }}" width="450" height="auto"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                            <div class="text-uppercase">After</div>
+                                        </div>
+                                        <div>
+                                            <img src="{{ $denoisedImage }}" width="450" height="auto"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            @endif
             <div class="row gx-5 align-items-center">
                 <div class="col-xxl-5">
                     <!-- Header text content-->
@@ -79,11 +107,11 @@
                                                 </div>
                                                 <div class="row row-cols-1 row-cols-md-3 mb-4">
                                                     <select name="filter_type" class="form-control">
-                                                        <option>Mean filtering</option>
-                                                        <option>Median filtering</option>
-                                                        <option>Gaussian blur</option>
-                                                        <option>Bilateral filtering</option>
-                                                        <option>Wavelet transformation</option>
+                                                        <option value="average">Mean filtering</option>
+                                                        <option value="median">Median filtering</option>
+                                                        <option value="gaussian">Gaussian blur</option>
+                                                        <option value="bilateral">Bilateral filtering</option>
+                                                        <option value="wavelet">Wavelet transformation</option>
                                                     </select>
                                                 </div>
                                                 <div class="d-flex align-items-center mb-4">
