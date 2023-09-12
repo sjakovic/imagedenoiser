@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Filter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Session;
@@ -11,16 +12,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $viewData = [];
+        $viewData = ['filters' => Filter::all()];
 
-        $image = Session::get('image');
+        $data = Session::get('data');
 
-        if ($image) {
-            $pathInfo = pathinfo($image);
-            $originalImage = '/storage/' . $image;
+        if ($data) {
+            $pathInfo = pathinfo($data['image']);
+            $originalImage = '/storage/' . $data['image'];
             $denoisedImage = '/storage/' . ($pathInfo['filename'] . '-denoised.' . $pathInfo['extension']);
 
             $viewData['showPreview'] = true;
+            $viewData['filterType'] = $data['filter_type'];
+            $viewData['kernel'] = $data['kernel'];
             $viewData['originalImage'] = $originalImage;
             $viewData['denoisedImage'] = $denoisedImage;
         }
@@ -42,6 +45,10 @@ class HomeController extends Controller
 
         Process::run("python3 {$index} {$originalImage} {$savePath} --filter_type={$data['filter_type']} --blur_ksize={$data['kernel']}");
 
-        return back()->with(['image' => pathinfo($originalImage)['basename']]);
+        return back()->with(['data' => [
+            'image' => pathinfo($originalImage)['basename'],
+            'filter_type' => $data['filter_type'],
+            'kernel' => $data['kernel'],
+        ]]);
     }
 }
