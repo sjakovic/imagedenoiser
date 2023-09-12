@@ -33,6 +33,9 @@ class HomeController extends Controller
 
     public function denoiseImage(Request $request)
     {
+        ini_set('upload_max_filesize', '20M');
+        ini_set('post_max_size', '20M');
+
         $data = $request->all();
 
         $path = $request->file('image_file')->store('public');
