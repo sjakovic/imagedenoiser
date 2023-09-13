@@ -21,7 +21,7 @@
 <main>
     <div class="container px-5 pb-5">
         @isset($showPreview)
-            <div class="row gx-5 align-items-center">
+            <div class="row gx-5 pt-3 align-items-center">
                 <section>
                     <div class="card shadow border-0 rounded-4 mb-5">
                         <div class="card-body p-5">
@@ -34,7 +34,7 @@
                                         </tr>
                                         <tr class="text-center">
                                             <td>{{ $filterType }}</td>
-                                            <td>{{ $kernel }}</td>
+                                            <td>{{ $kernel }}x{{ $kernel }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -87,6 +87,13 @@
                                 <div class="card-body p-5">
                                     <!-- Professional skills list-->
                                     <div>
+                                        @if($errors->any())
+                                            <div class="alert alert-danger align-items-center">
+                                                @foreach($errors->all() as $error)
+                                                    <div>{{ $error }}</div>
+                                                @endforeach
+                                            </div>
+                                        @endif
                                         <form name="denoise_form"
                                               enctype="multipart/form-data"
                                               method="POST"

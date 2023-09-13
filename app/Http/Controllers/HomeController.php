@@ -10,11 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        ini_set('upload_max_filesize', '20M');
-        ini_set('post_max_size', '20M');
-
         $viewData = ['filters' => Filter::all()];
 
         $data = Session::get('data');
@@ -25,7 +22,7 @@ class HomeController extends Controller
             $denoisedImage = '/storage/' . ($pathInfo['filename'] . '-denoised.' . $pathInfo['extension']);
 
             $viewData['showPreview'] = true;
-            $viewData['filterType'] = $data['filter_type'];
+            $viewData['filterType'] = Filter::from($data['filter_type'])->name();
             $viewData['kernel'] = $data['kernel'];
             $viewData['originalImage'] = $originalImage;
             $viewData['denoisedImage'] = $denoisedImage;
@@ -36,8 +33,11 @@ class HomeController extends Controller
 
     public function denoiseImage(Request $request)
     {
-        ini_set('upload_max_filesize', '20M');
-        ini_set('post_max_size', '20M');
+        $request->validate([
+            'image_file' => 'required|file|max:2048',
+        ], [
+            'image_file' => 'File is not valid or not allowed size. Maximum allowed size is 2MB.',
+        ]);
 
         $data = $request->all();
 
