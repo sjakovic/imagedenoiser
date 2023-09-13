@@ -18,12 +18,7 @@
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body class="d-flex flex-column h-100">
-<main >
-    <div class="container px-5 justify-content-center">
-        <h1 class="display-3 fw-bolder mb-5">
-            <span class="text-gradient d-inline">Image Denoiser</span>
-        </h1>
-    </div>
+<main>
     <div class="container px-5 pb-5">
         @isset($showPreview)
             <div class="row gx-5 align-items-center">
@@ -68,13 +63,14 @@
             </div>
         @endif
         <div class="row gx-5 align-items-center">
-            <div class="col-xxl-5">
+            <div class="col-md-5 text-center">
+                <h1 class="display-5 fw-bolder">
+                    <span class="text-gradient d-inline">Image Denoiser</span>
+                </h1>
                 <!-- Header text content-->
-                <div class="text-center text-xxl-start">
+                <div class="text-center text-xxl-start pt-5">
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                        <div
-                            class="text-uppercase">Remove noise from image
-                        </div>
+                        <div class="text-uppercase">Remove noise from image</div>
                     </div>
                     <div class="fs-3 fw-light text-muted">1. Select image</div>
                     <div class="fs-3 fw-light text-muted">2. Choose filter type</div>
@@ -82,13 +78,12 @@
                     <div class="fs-3 fw-light text-muted">4. Press "CONVERT"</div>
                 </div>
             </div>
-            <div class="col-xxl-7">
-                <!-- Header profile picture-->
+            <div class="col-md-7">
                 <div class="d-flex justify-content-center mt-xxl-0">
                     <div class="profile">
                         <section>
                             <!-- Skillset Card-->
-                            <div class="card shadow border-0 rounded-4 mb-10">
+                            <div class="card shadow border-0 rounded-4">
                                 <div class="card-body p-5">
                                     <!-- Professional skills list-->
                                     <div>
