@@ -17,7 +17,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column min-vh-100">
 <main>
     <div class="container px-5 pb-5">
         @isset($showPreview)
@@ -72,10 +72,9 @@
                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
                         <div class="text-uppercase">Remove noise from image</div>
                     </div>
-                    <div class="fs-3 fw-light text-muted">1. Select image</div>
-                    <div class="fs-3 fw-light text-muted">2. Choose filter type</div>
-                    <div class="fs-3 fw-light text-muted">3. Set Kernel size</div>
-                    <div class="fs-3 fw-light text-muted">4. Press "CONVERT"</div>
+                    <div class="fs-4 fw-light text-muted">
+                        Welcome to imagedenoiser.com - Your Go-To Solution for Crystal Clear Images! Remove unwanted noise and enhance image quality with our advanced denoising tools. Achieve stunning, professional-grade results in just a few clicks!
+                    </div>
                 </div>
             </div>
             <div class="col-md-7">
@@ -128,7 +127,7 @@
                                                     class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
                                                     <i class="bi bi-dot"></i></div>
                                                 <h3 class="fw-bolder mb-0"><span
-                                                        class="text-gradient d-inline">Set Kernel size</span></h3>
+                                                        class="text-gradient d-inline">Smoothing Level</span></h3>
                                             </div>
                                             <div class="row row-cols-1 row-cols-md-3 mb-4">
                                                 <input type="number" name="kernel" class="form-control" min="3"
@@ -153,11 +152,11 @@
     </div>
 </main>
 <!-- Footer-->
-<footer class="bg-white py-4" style="margin-top: 50px;">
+<footer class="py-4 mt-auto">
     <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+        <div class="row align-items-start flex-column flex-sm-row">
             <div class="col-auto">
-                <div class="small m-0">Copyright &copy; Image Denoiser 2023</div>
+                <span class="small">Copyright &copy; Image Denoiser 2023</span>
             </div>
             <div class="col-auto">
                 <a class="small" href="#!">Privacy</a>
