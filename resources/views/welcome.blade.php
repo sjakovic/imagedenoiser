@@ -18,7 +18,7 @@
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body class="d-flex flex-column min-vh-100">
-<main>
+<main style="height: auto;">
     <div class="container px-5 pb-5">
         @isset($showPreview)
             <div class="row gx-5 pt-3 align-items-center">
@@ -154,7 +154,7 @@
 <!-- Footer-->
 <footer class="py-4 mt-auto">
     <div class="container px-5">
-        <div class="row align-items-start flex-column flex-sm-row">
+        <div class="row align-ite flex-sm-row">
             <div class="col-auto">
                 <span class="small">Copyright &copy; Image Denoiser 2023</span>
             </div>
