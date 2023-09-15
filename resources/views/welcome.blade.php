@@ -156,12 +156,13 @@
         <div class="row">
             <div class="col-8 offset-2 text-center">
                 <span class="small">Copyright &copy; Image Denoiser 2023</span>
-                <span class="mx-1">-</span>
-                <a class="small" href="#!">Privacy</a>
-                <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">Terms</a>
-                <span class="mx-1">&middot;</span>
-                <a class="small" href="#!">Contact</a>
+                <p>
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="#!">Contact</a>
+                </p>
             </div>
         </div>
     </div>
