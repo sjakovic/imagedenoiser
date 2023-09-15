@@ -116,7 +116,7 @@
                                                         class="text-gradient d-inline">Choose filter</span></h3>
                                             </div>
                                             <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <select name="filter_type" class="form-control">
+                                                <select name="filter_type" class="form-select">
                                                     @foreach($filters as $value => $name)
                                                         <option value="{{ $value }}">{{ $name }}</option>
                                                     @endforeach
