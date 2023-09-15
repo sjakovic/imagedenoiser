@@ -17,49 +17,48 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
-<body class="d-flex flex-column min-vh-100">
-<main style="height: auto;">
-    <div class="container px-5 pb-5">
+<body>
+<main>
+    <div class="container">
         @isset($showPreview)
             <div class="row gx-5 pt-3 align-items-center">
-                <section>
-                    <div class="card shadow border-0 rounded-4 mb-5">
-                        <div class="card-body p-5">
-                            <div class="row">
-                                <div class="col-md-10 offset-md-1">
-                                    <table class="table table-striped">
-                                        <tr class="bg-gradient-primary-to-secondary text-center">
-                                            <th class="text-white">FILTER TYPE</th>
-                                            <th class="text-white">KERNEL SIZE</th>
-                                        </tr>
-                                        <tr class="text-center">
-                                            <td>{{ $filterType }}</td>
-                                            <td>{{ $kernel }}x{{ $kernel }}</td>
-                                        </tr>
-                                    </table>
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <table class="table table-striped">
+                                    <tr class="bg-gradient-primary-to-secondary text-center">
+                                        <th class="text-white">FILTER TYPE</th>
+                                        <th class="text-white">KERNEL SIZE</th>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>{{ $filterType }}</td>
+                                        <td>{{ $kernel }}x{{ $kernel }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 text-center">
+                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                    <div class="text-uppercase">Before</div>
+                                </div>
+                                <div>
+                                    <img src="{{ $originalImage }}" width="450" height="auto"/>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                                        <div class="text-uppercase">Before</div>
-                                    </div>
-                                    <div>
-                                        <img src="{{ $originalImage }}" width="450" height="auto"/>
-                                    </div>
+                            <div class="col-md-6 text-center">
+                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                    <div class="text-uppercase">After</div>
                                 </div>
-                                <div class="col-md-6 text-center">
-                                    <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
-                                        <div class="text-uppercase">After</div>
-                                    </div>
-                                    <div>
-                                        <img src="{{ $denoisedImage }}" width="450" height="auto"/>
-                                    </div>
+                                <div>
+                                    <img src="{{ $denoisedImage }}" width="450" height="auto"/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+
             </div>
         @endif
         <div class="row gx-5 align-items-center">
@@ -79,7 +78,7 @@
             </div>
             <div class="col-md-7">
                 <div class="d-flex justify-content-center mt-xxl-0">
-                    <div class="profile">
+                    <div class="upload-form">
                         <section>
                             <!-- Skillset Card-->
                             <div class="card shadow border-0 rounded-4">
@@ -152,13 +151,12 @@
     </div>
 </main>
 <!-- Footer-->
-<footer class="py-4 mt-auto">
+<footer>
     <div class="container px-5">
-        <div class="row align-ite flex-sm-row">
-            <div class="col-auto">
+        <div class="row">
+            <div class="col-8 offset-2 text-center">
                 <span class="small">Copyright &copy; Image Denoiser 2023</span>
-            </div>
-            <div class="col-auto">
+                <span class="mx-1">-</span>
                 <a class="small" href="#!">Privacy</a>
                 <span class="mx-1">&middot;</span>
                 <a class="small" href="#!">Terms</a>

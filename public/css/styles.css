@@ -11732,3 +11732,12 @@ html {
     left: -2vw;
   }
 }
+
+.upload-form {
+    margin-top: 5vw;
+    max-width: 30rem;
+}
+
+footer {
+    margin-top: 2vw;
+}
